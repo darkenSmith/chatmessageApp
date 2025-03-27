@@ -1,43 +1,49 @@
-<h2 xmlns="http://www.w3.org/1999/html">Chat</h2>
+<div class="chat-container">
+  <h2>Chat</h2>
 
-<!-- Registration Form -->
-<div *ngIf="!isRegistered">
-  <h3>Register</h3>
-  <form (ngSubmit)="registerUser()">
-    <label for="username">Name:</label>
-    <input id="username" [(ngModel)]="userName" name="username" required placeholder="Enter your name" />
-    <br>
-    <label for="email">Email:</label>
-    <input id="email" [(ngModel)]="userEmail" name="email" required type="email" placeholder="Enter your email" />
-    <br>
-    <label for="password">Password:</label>
-    <input id="password" [(ngModel)]="password" name="password" required type="password" placeholder="Enter password" />
-    <button type="submit">Register</button>
-  </form>
-</div>
-
-<!-- Chat Interface (Only appears if the user is registered) -->
-<div *ngIf="isRegistered">
-  <div>
-    <input [(ngModel)]="newMessage" placeholder="Type your message..." />
-    <button (click)="sendMessage()">Send</button>
+  <!-- Registration Form -->
+  <div class="register-section" *ngIf="!isRegistered">
+    <h3>Register</h3>
+    <form (ngSubmit)="registerUser()" class="register-form">
+      <div class="form-group">
+        <label for="username">Name:</label>
+        <input id="username" [(ngModel)]="userName" name="username" required placeholder="Enter your name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" [(ngModel)]="userEmail" name="email" required type="email" placeholder="Enter your email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" [(ngModel)]="password" name="password" required type="password" placeholder="Enter password" />
+      </div>
+      <button type="submit">Register</button>
+    </form>
   </div>
 
-  <div *ngIf="pendingMessages.length">
-    <h3>Pending Messages</h3>
-    <ul>
-      <li *ngFor="let msg of pendingMessages">
-        {{ msg.content }} ({{ msg.status }})
-      </li>
-    </ul>
-  </div>
+  <!-- Chat Interface -->
+  <div class="chat-section" *ngIf="isRegistered">
+    <div class="message-input">
+      <input [(ngModel)]="newMessage" placeholder="Type your message..." />
+      <button (click)="sendMessage()">Send</button>
+    </div>
 
-  <div *ngIf="processedMessages.length">
-    <h3>Processed Messages</h3>
-    <ul>
-      <li *ngFor="let msg of processedMessages">
-        {{ msg.content }} ({{ msg.status }})
-      </li>
-    </ul>
+    <div class="pending-messages" *ngIf="pendingMessages.length">
+      <h3>Pending Messages</h3>
+      <ul>
+        <li *ngFor="let msg of pendingMessages">
+          {{ msg.content }} <span class="status">({{ msg.status }})</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="processed-messages" *ngIf="processedMessages.length">
+      <h3>Processed Messages</h3>
+      <ul>
+        <li *ngFor="let msg of processedMessages">
+          {{ msg.content }} <span class="status">({{ msg.status }})</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

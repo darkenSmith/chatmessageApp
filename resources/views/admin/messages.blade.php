@@ -1,6 +1,6 @@
 <!-- resources/views/admin/messages.blade.php -->
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{ asset('css/app.scss') }}">
 @section('content')
     <h1>Messages in Process</h1>
     <table>

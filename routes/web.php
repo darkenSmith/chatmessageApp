@@ -4,7 +4,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin/messages', [AdminController::class, 'index'])->name('admin.messages');
+Route::get('/', [AdminController::class, 'index'])->name('admin.messages');
 Route::post('/admin/messages/{message}/complete', [AdminController::class, 'confirmMessage']);
 
 //Route::get('/broadcasting/auth', function () {

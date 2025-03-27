@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chat',
+  styleUrls: ['./chat.component.scss'],
   standalone: true,
   imports: [
     FormsModule,

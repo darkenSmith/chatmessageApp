@@ -20,10 +20,12 @@ These instructions detail how to run the project locally using your host’s PHP
 
 ### Setup Instructions
 
+- fork repo if need be.
+
 1. **Setup MySQL**
     - Start your local MySQL server.
     
-2. **Configure Laravel Backend**
+3. **Configure Laravel Backend**
     - Install PHP dependencies:
       ```bash
       composer install
@@ -44,14 +46,14 @@ These instructions detail how to run the project locally using your host’s PHP
       php artisan migrate
       ```
 
-3. **Run Laravel Server**
+4. **Run Laravel Server**
     - Start the Laravel API server:
       ```bash
       php artisan serve --port=8000
       ```
     - This runs the API at `http://localhost:8000`.
 
-4. **Start Laravel Reverb**
+5. **Start Laravel Reverb**
     - Open a new terminal tab and navigate to the project root:
       ```bash
       cd messageApp
@@ -62,7 +64,7 @@ These instructions detail how to run the project locally using your host’s PHP
       ```
     - This runs Reverb at `ws://localhost:8080`.
 
-5. **Run Angular Frontend**
+6. **Run Angular Frontend**
     - Navigate to the frontend directory:
       ```bash
       cd /messageApp/realtime-chat-app
@@ -79,7 +81,7 @@ These instructions detail how to run the project locally using your host’s PHP
       ```
     - This runs the frontend at `http://localhost:4200`.
 
-6. **Access the Application**
+7. **Access the Application**
     - **Laravel API**: `http://localhost:8000`
     - **Reverb WebSocket**: `ws://localhost:8080`
     - **Angular Frontend**: `http://localhost:4200`

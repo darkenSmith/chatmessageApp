@@ -1,0 +1,53 @@
+2025-03-27 20:13:18,780 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-03-27 20:13:18,786 INFO supervisord started with pid 1
+2025-03-27 20:13:19,793 INFO spawned: 'nginx' with pid 7
+2025-03-27 20:13:19,796 INFO spawned: 'php-fpm' with pid 8
+2025-03-27 20:13:19,801 INFO spawned: 'reverb' with pid 9
+2025-03-27 20:13:21,126 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 20:13:21,126 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 20:13:21,126 INFO success: reverb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 20:24:07,069 WARN received SIGQUIT indicating exit request
+2025-03-27 20:24:07,080 INFO waiting for nginx, php-fpm, reverb to die
+2025-03-27 20:24:08,212 INFO stopped: reverb (exit status 0)
+2025-03-27 20:24:09,246 INFO stopped: php-fpm (exit status 0)
+2025-03-27 20:24:10,261 INFO stopped: nginx (exit status 0)
+2025-03-27 20:41:03,287 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-03-27 20:41:03,291 INFO supervisord started with pid 1
+2025-03-27 20:41:04,304 INFO spawned: 'nginx' with pid 7
+2025-03-27 20:41:04,309 INFO spawned: 'php-fpm' with pid 8
+2025-03-27 20:41:04,313 INFO spawned: 'reverb' with pid 9
+2025-03-27 20:41:06,060 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 20:41:06,062 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 20:41:06,062 INFO success: reverb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:09:26,291 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-03-27 21:09:26,295 INFO supervisord started with pid 1
+2025-03-27 21:09:27,302 INFO spawned: 'nginx' with pid 7
+2025-03-27 21:09:27,304 INFO spawned: 'php-fpm' with pid 8
+2025-03-27 21:09:27,309 INFO spawned: 'reverb' with pid 9
+2025-03-27 21:09:28,457 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:09:28,461 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:09:28,461 INFO success: reverb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:10:34,935 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-03-27 21:10:34,937 INFO supervisord started with pid 1
+2025-03-27 21:10:35,943 INFO spawned: 'nginx' with pid 7
+2025-03-27 21:10:35,946 INFO spawned: 'php-fpm' with pid 8
+2025-03-27 21:10:35,953 INFO spawned: 'reverb' with pid 9
+2025-03-27 21:10:37,413 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:10:37,415 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:10:37,419 INFO success: reverb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:20:19,031 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-03-27 21:20:19,033 INFO supervisord started with pid 1
+2025-03-27 21:20:20,040 INFO spawned: 'nginx' with pid 7
+2025-03-27 21:20:20,044 INFO spawned: 'php-fpm' with pid 8
+2025-03-27 21:20:20,048 INFO spawned: 'reverb' with pid 9
+2025-03-27 21:20:21,123 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:20:21,123 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:20:21,124 INFO success: reverb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:37:40,490 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-03-27 21:37:40,493 INFO supervisord started with pid 1
+2025-03-27 21:37:41,503 INFO spawned: 'nginx' with pid 7
+2025-03-27 21:37:41,506 INFO spawned: 'php-fpm' with pid 8
+2025-03-27 21:37:41,509 INFO spawned: 'reverb' with pid 9
+2025-03-27 21:37:42,978 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:37:42,978 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-27 21:37:42,979 INFO success: reverb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

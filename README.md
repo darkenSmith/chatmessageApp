@@ -1,66 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ChatMessageApp Usage
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**ChatMessageApp** is a real-time messaging system where users send messages for processing, an admin team confirms them, and the messages are labeled as "complete" before being returned to the user. The backend is powered by **Laravel 11** and **PHP 8.2**, using **Laravel Reverb** for WebSocket-based real-time updates. The frontend, built with **Angular 18**, provides an interactive interface for message submission and status tracking. Data is stored in a MySQL database for persistence.
 
-## About Laravel
+## Features
+- **Message Submission**: Users send messages via the Angular frontend to the Laravel API.
+- **Admin Confirmation**: An admin team processes messages, marking them as "complete" (assumed via backend logic).
+- **Real-Time Updates**: Laravel Reverb broadcasts completed messages to users instantly over WebSockets.
+- **Tech Stack**: Laravel 11, Laravel Reverb, PHP 8.2, Angular 18, MySQL.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Running Locally
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+These instructions detail how to run the project locally using your host’s PHP, Node.js, and MySQL installations, based on the repository at `https://github.com/darkenSmith/chatmessageApp`. Node.js is required to build and serve the Angular frontend.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Prerequisites
+- **PHP 8.2+** with Composer (extensions: `pdo_mysql`, `mbstring`, `exif`, `pcntl`, `bcmath`, `gd`)
+- **Node.js 18+** with npm (for Angular frontend development and runtime)
+- **MySQL 5.7 or 8.0**
+- **Git** (to clone the repository)
 
-## Learning Laravel
+### Setup Instructions
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Setup MySQL**
+    - Start your local MySQL server.
+    
+2. **Configure Laravel Backend**
+    - Install PHP dependencies:
+      ```bash
+      composer install
+      ```
+    
+      Edit `.env` make sure database name is `messageapp` and
+    - also edit reverb setup - here are some defaults: 
+    - ```
+      REVERB_APP_ID=802751
+      REVERB_APP_KEY=hbrebdgtltg89tldyqme
+      REVERB_APP_SECRET=rrhixcnx5xgaxkypabhx
+      REVERB_HOST="localhost"
+      REVERB_PORT=8080
+      REVERB_SCHEME=http
+      ```
+    - run migrations:
+      ```bash
+      php artisan migrate
+      ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. **Run Laravel Server**
+    - Start the Laravel API server:
+      ```bash
+      php artisan serve --port=8000
+      ```
+    - This runs the API at `http://localhost:8000`.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. **Start Laravel Reverb**
+    - Open a new terminal tab and navigate to the project root:
+      ```bash
+      cd messageApp
+      ```
+    - Start the Reverb WebSocket server:
+      ```bash
+      php artisan reverb:start --host=127.0.0.1 --port=8080
+      ```
+    - This runs Reverb at `ws://localhost:8080`.
 
-## Laravel Sponsors
+5. **Run Angular Frontend**
+    - Navigate to the frontend directory:
+      ```bash
+      cd /messageApp/realtime-chat-app
+      ```
+    - Install Node.js dependencies (required for Angular):
+      ```bash
+      npm install
+      ```
+    - you can edit the  `realtime-chat-app/src/environments/environment.ts`:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    - Start the Angular frontend:
+      ```bash
+      ng serve --port=4200
+      ```
+    - This runs the frontend at `http://localhost:4200`.
 
-### Premium Partners
+6. **Access the Application**
+    - **Laravel API**: `http://localhost:8000`
+    - **Reverb WebSocket**: `ws://localhost:8080`
+    - **Angular Frontend**: `http://localhost:4200`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Notes
+- Keep three terminal windows open:
+    1. Laravel API: `php artisan serve --port=8000`
+    2. Reverb: `php artisan reverb:start --host=127.0.0.1 --port=8080`
+    3. Angular: `ng serve --port=4200`
+- there was a docker setup but due to my low storage i was having issue setting up correctly

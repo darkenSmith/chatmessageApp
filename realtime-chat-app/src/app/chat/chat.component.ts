@@ -68,8 +68,6 @@ export class ChatComponent implements OnInit, OnDestroy {
               const [msg] = this.pendingMessages.splice(idx, 1);
               msg.status = 'completed';
               this.processedMessages.push(msg);
-            } else {
-              this.processedMessages.push(e);
             }
           });
         });
@@ -78,9 +76,9 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   // Method to send a message
   sendMessage(): void {
-    this.setupEcho();
     const content = this.newMessage.trim();
     if (!content) return;
+    this.setupEcho();
     this.messageService.sendMessage(content).subscribe({
       next: (msg) => {
         this.pendingMessages.push(msg);
